@@ -771,3 +771,124 @@ footer{
         background-image: url("images/plants-on-table-wide.jpg");
     }
 }
+
+
+/* Plants Section - Flex container, vertical direction, space-between */
+#plants section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Plants Section - Image above heading */
+#plants section img {
+    order: -1;
+}
+
+/* Social - Grid layout for social links */
+#social ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+#social h4 {
+    grid-column: 1 / -1;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 500px) {
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav li {
+        flex-basis: 30%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #plants {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #plants h3,
+    #plants p {
+        flex-basis: 100%;
+    }
+
+    #plants section {
+        flex-basis: 45%;
+    }
+
+    #plants .price {
+        flex-basis: 25%;
+    }
+
+    #contact > div {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto auto;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    #contact div > section {
+        grid-column: 1 / 2;
+    }
+
+    #contact div table {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    #plants {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 8px;
+        column-gap: 32px;
+    }
+
+    #plants h3,
+    #plants > p {
+        grid-column: 1 / -1;
+    }
+
+    #plants section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #plants .price {
+        flex-basis: 20%;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 32px;
+    }
+
+    #contact h3,
+    #contact > p {
+        grid-column: 1 / -1;
+    }
+}
